@@ -26,6 +26,17 @@ export function fetchChannels () {
   }
 }
 
+export default function channels (state = [], action) {
+  switch (action.type) {
+    case GET_CHANNELS:
+      return action.channels;
+    case GET_CHANNEL:
+      return [...state, action];
+    default:
+      return state;
+  }
+}
+
 export function postChannel (channel, history) {
 
   return function thunk (dispatch) {
@@ -41,19 +52,4 @@ export function postChannel (channel, history) {
 
 }
 
-export default function channels (state = [], action) {
-  switch (action.type) {
-    case GET_CHANNELS:
-      return {
-        ...state,
-        channels: action.channels
-      };
-     case GET_CHANNEL:
-      return {
-        ...state,
-        channels: [...state.channels, action.channel]
-    };
-    default:
-      return state
-  }
-}
+

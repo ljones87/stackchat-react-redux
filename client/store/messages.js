@@ -43,17 +43,10 @@ export function postMessage (message, history) {
 export default function messages (state = [], action) {
   switch (action.type) {
     case GET_MESSAGES:
-      return {
-        ...state,
-        messages: action.messages
-      };
-
+      return action.messages;
     case GET_MESSAGE:
-      return {
-        ...state,
-        messages: [...state.messages, action.message]
-      };
+      return [...state, action.message];
     default:
-      return state
+      return state;
   }
 }
