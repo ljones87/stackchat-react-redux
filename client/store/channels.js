@@ -1,5 +1,5 @@
 import axios from 'axios';
-import socket from './socket';
+import socket from '../socket';
 
 const GET_CHANNELS = 'GET_CHANNELS';
 const GET_CHANNEL = 'GET_CHANNEL';

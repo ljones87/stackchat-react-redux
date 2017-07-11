@@ -8,7 +8,7 @@ import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-export default combineReducers({
+const reducer = combineReducers({
 	messages,
 	channels,
 	name,
@@ -25,3 +25,9 @@ const store = createStore(
 );
 
 export default store;
+
+export * from './messages';
+export * from './channels';
+export * from './name';
+export * from './newChannelEntry';
+export * from './newMessageEntry';

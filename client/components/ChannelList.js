@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import store from '../store';
+import store from '../store/index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
@@ -12,7 +12,6 @@ const DOGS_CHANNEL = '/channels/3';
 const LUNCH_CHANNEL = '/channels/4';
 
 function ChannelList (props) {
-
     return (
       <ul>
       {props.channels.map(channel =>
